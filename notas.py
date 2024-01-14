@@ -29,7 +29,8 @@ while True:
         novo_titulo = input('Informe o novo titulo da nota: ')
         editar_titulo(arquivo, titulo_antigo, novo_titulo)
     elif resposta == 5:
-        documentacao()
+        cabecalhoprincipal('DOCUMENTAÇÃO'.center(62))
+        documentacao('documentacao.txt')
     elif resposta == 6:
         cabecalhosecundario('\033[36mSaindo do sistema... Até logo!\033[0m')
         break
