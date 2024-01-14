@@ -93,3 +93,21 @@ def editar_titulo(arquivo, titulo_antigo, novo_titulo):
         print(f'O arquivo {arquivo} não foi encontrado.')
     except Exception as e:
         print(f'Ocorreu um ERRO ao editar o título: {e}')
+
+
+def documentacao():
+    try:
+        with open('documentacao.txt', 'rt') as arquivo:
+            cabecalhosecundario('DOCUMENTAÇÃO DO PROJETO'.center(62))
+            for linha in arquivo:
+                if ';' in linha:
+                    titulo, conteudo = linha.split(';', 1)
+                    print(f'{titulo}: {conteudo.strip()}')
+                else:
+                    print(f'Formato incorreto na linha: {linha.strip()}')
+
+    except FileNotFoundError:
+        print('O arquivo de documentação não foi encontrado.')
+    except Exception as e:
+        print(f'Ocorreu um erro ao ler o arquivo de documentação: {e}')
+

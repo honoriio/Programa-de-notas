@@ -9,7 +9,7 @@ if not arquivo_existente(arquivo):
 
 while True:
     cabecalhoprincipal('\033[33mHÓRUS-PAD V-0.1.1\033[0m')
-    resposta = menu(['VER NOTAS CRIADAS', 'CRIAR UMA NOVA NOTA', 'EXCLUIR NOTA', 'ALTERAR TITULO', 'SAIR DO SISTEMA'])
+    resposta = menu(['VER NOTAS CRIADAS', 'CRIAR UMA NOVA NOTA', 'EXCLUIR NOTA', 'EDITAR TITULO', 'DOCUMENTAÇÃO', 'SAIR DO SISTEMA'])
     if resposta == 1:
         # Mostrar todas as notas criadas
         lerarquivo(arquivo)
@@ -29,6 +29,8 @@ while True:
         novo_titulo = input('Informe o novo titulo da nota: ')
         editar_titulo(arquivo, titulo_antigo, novo_titulo)
     elif resposta == 5:
+        documentacao()
+    elif resposta == 6:
         cabecalhosecundario('\033[36mSaindo do sistema... Até logo!\033[0m')
         break
     else:
